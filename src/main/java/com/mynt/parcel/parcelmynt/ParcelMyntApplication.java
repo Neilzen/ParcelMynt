@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt;
+package com.mynt.parcel.parcelmynt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

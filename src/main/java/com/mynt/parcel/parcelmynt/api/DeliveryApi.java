@@ -1,8 +1,8 @@
-package com.mynt.parcel.ParcelMynt.api;
+package com.mynt.parcel.parcelmynt.api;
 
-import com.mynt.parcel.ParcelMynt.api.dto.ParcelDTO;
-import com.mynt.parcel.ParcelMynt.api.response.ParcelResponse;
-import com.mynt.parcel.ParcelMynt.api.response.VoucherResponse;
+import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO;
+import com.mynt.parcel.parcelmynt.api.response.ParcelResponse;
+import com.mynt.parcel.parcelmynt.api.response.VoucherResponse;
 import java.math.BigDecimal;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

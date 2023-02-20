@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt.core.model;
+package com.mynt.parcel.parcelmynt.core.model;
 
 import java.math.BigDecimal;
 import lombok.Builder;

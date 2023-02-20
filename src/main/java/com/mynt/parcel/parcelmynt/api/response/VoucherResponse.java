@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt.api.response;
+package com.mynt.parcel.parcelmynt.api.response;
 
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;

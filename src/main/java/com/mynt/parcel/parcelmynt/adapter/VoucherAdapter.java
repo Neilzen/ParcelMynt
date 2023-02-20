@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt.adapter;
+package com.mynt.parcel.parcelmynt.adapter;
 
 import java.math.BigDecimal;
 

@@ -1,9 +1,9 @@
-package com.mynt.parcel.ParcelMynt.core.service.impl;
+package com.mynt.parcel.parcelmynt.core.service.impl;
 
-import com.mynt.parcel.ParcelMynt.adapter.VoucherAdapter;
-import com.mynt.parcel.ParcelMynt.api.dto.ParcelDTO;
-import com.mynt.parcel.ParcelMynt.api.response.VoucherResponse;
-import com.mynt.parcel.ParcelMynt.core.service.ParcelService;
+import com.mynt.parcel.parcelmynt.adapter.VoucherAdapter;
+import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO;
+import com.mynt.parcel.parcelmynt.api.response.VoucherResponse;
+import com.mynt.parcel.parcelmynt.core.service.ParcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
