@@ -1,9 +1,10 @@
 package com.mynt.parcel.parcelmynt.adapter;
 
+import com.mynt.parcel.parcelmynt.api.response.VoucherResponse;
 import java.math.BigDecimal;
 
 public interface VoucherAdapter {
 
-    BigDecimal getVoucherDiscount(String voucherCode);
+    VoucherResponse getVoucherDiscount(String voucherCode);
 
 }

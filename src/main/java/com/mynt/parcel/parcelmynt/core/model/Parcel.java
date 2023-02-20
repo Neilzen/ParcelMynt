@@ -21,6 +21,4 @@ public class Parcel {
         return height.multiply(width).multiply(length);
     }
 
-
-
 }

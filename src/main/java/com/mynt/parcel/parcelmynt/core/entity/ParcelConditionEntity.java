@@ -13,10 +13,10 @@ public class ParcelConditionEntity {
     private Integer priority;
     private String ruleName;
     private String conditionExpression;
-    private ConditionOperator conditionOperator;
     private BigDecimal conditionLimit;
     private BigDecimal cost;
     private String costExpression;
     private boolean isReject;
+    private boolean isActive;
 
 }

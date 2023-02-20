@@ -26,6 +26,7 @@ public class DeliveryApi {
         ParcelResponse parcelResponse = new ParcelResponse(
                 BigDecimal.valueOf(103.00),
                 BigDecimal.valueOf(100.00),
+                false,
                 new VoucherResponse(
                         BigDecimal.valueOf(3.00),
                         "testVoucher",
