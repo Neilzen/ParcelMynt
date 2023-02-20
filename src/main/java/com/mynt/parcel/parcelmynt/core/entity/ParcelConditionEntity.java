@@ -1,7 +1,6 @@
 package com.mynt.parcel.parcelmynt.core.entity;
 
 import com.mynt.parcel.parcelmynt.core.enumeration.ConditionOperator;
-import com.mynt.parcel.parcelmynt.core.enumeration.ConditionType;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +12,7 @@ public class ParcelConditionEntity {
     private int id;
     private Integer priority;
     private String ruleName;
-    private ConditionType conditionType;
+    private String conditionExpression;
     private ConditionOperator conditionOperator;
     private BigDecimal conditionLimit;
     private BigDecimal cost;

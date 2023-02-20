@@ -29,7 +29,6 @@ class DeliveryApiTest extends Specification {
     @Autowired
     TestRestTemplate restTemplate
 
-    @Test
     void 'Parcel Post - where all request are valid'() {
         given:
         def requestBody = new ParcelDTO(weight: new BigDecimal("25"),
@@ -49,7 +48,7 @@ class DeliveryApiTest extends Specification {
         HttpStatus.OK == response.statusCode
     }
 
-    @Test
+
     @Unroll
     void 'Parcel Post - where #scope'() {
         given:
