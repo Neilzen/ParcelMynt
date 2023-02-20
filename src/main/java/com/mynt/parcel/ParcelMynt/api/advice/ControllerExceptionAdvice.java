@@ -20,12 +20,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @Slf4j
 public class ControllerExceptionAdvice extends ResponseEntityExceptionHandler {
 
-//    @ExceptionHandler(value = { UserAlreadyExistAuthenticationException.class })
-//    public ResponseEntity handleInvalidInputException(UserAlreadyExistAuthenticationException ex) {
-//        log.error("UserAlreadyExistAuthenticationException: ",ex.getMessage());
-//        return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-//    }
-
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex, HttpHeaders headers,
