@@ -19,6 +19,7 @@ public class DeliveryApi {
 
     @PostMapping("/parcel")
     public ResponseEntity<ParcelResponse> computeParcelCost(@RequestBody @Valid ParcelDTO parcelDTO) {
+        log.info("Start - Compute Parcel Cost");
         ParcelResponse parcelResponse = new ParcelResponse(
                 BigDecimal.valueOf(103.00),
                 BigDecimal.valueOf(100.00),
@@ -29,6 +30,7 @@ public class DeliveryApi {
                 )
         );
 
+        log.info("End - Compute Parcel Cost");
         return ResponseEntity.ok(parcelResponse);
     }
 
