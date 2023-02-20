@@ -21,6 +21,7 @@ public class ParcelServiceImpl implements ParcelService {
 
     @Override
     public VoucherResponse calculateCost(ParcelDTO parcelDTO) {
+
         return null;
     }
 }
