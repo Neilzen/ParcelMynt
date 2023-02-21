@@ -32,7 +32,7 @@ public class VoucherGateway implements VoucherAdapter {
         return VoucherResponse.builder()
                 .voucherCode(voucherCode)
                 .discount(BigDecimal.valueOf(response.getDiscount()))
-                .isExpired(response.getExpiry().isAfter(LocalDate.now()))
+                .isExpired(LocalDate.now().isAfter(response.getExpiry()))
                 .build();
     }
 }

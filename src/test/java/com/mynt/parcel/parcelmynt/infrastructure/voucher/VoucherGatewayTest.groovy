@@ -21,7 +21,30 @@ class VoucherGatewayTest extends Specification {
     @Autowired
     String apiKey
 
-    def 'Basic Test' () {
+    def 'Test Voucher Gateway - Not Expired' () {
+        given:
+        def voucherCode = "TEST_VOUCHER"
+        def discount = new BigDecimal('10.00')
+        def expiryDate = LocalDate.now().plusDays(1l)
+
+        voucherClient.getVoucher(voucherCode, apiKey) >> {
+            return new VoucherClientResponse(
+                    voucherCode,
+                    new BigDecimal('10.00'),
+                    expiryDate,
+            )
+        }
+
+        when:
+        def response = voucherAdapter.getVoucherDiscount(voucherCode)
+
+        then:
+        voucherCode == response.getVoucherCode()
+        discount == response.getDiscount()
+        !response.isExpired()
+    }
+
+    def 'Test Voucher Gateway - Expired' () {
         given:
         def voucherCode = "TEST_VOUCHER"
         def discount = new BigDecimal('10.00')
@@ -41,7 +64,7 @@ class VoucherGatewayTest extends Specification {
         then:
         voucherCode == response.getVoucherCode()
         discount == response.getDiscount()
-        !response.isExpired()
+        response.isExpired()
     }
 
 }
