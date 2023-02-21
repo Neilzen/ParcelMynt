@@ -44,3 +44,5 @@ This also includes the details of the mock server that they have provided for yo
 - gradle clean build
 
 ## Run Locally
+- gradle bootRun
+- URL for accessing swagger-ui: http://localhost:8080/swagger-ui/index.html
