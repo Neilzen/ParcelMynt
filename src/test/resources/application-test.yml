@@ -1,3 +1,4 @@
-#server.error:
-#  include-binding-errors: always
-#  include-message: always
+outbound:
+  voucher:
+    url: testUrl
+    apiKey: testKey

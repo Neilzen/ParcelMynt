@@ -1,1 +1,4 @@
-
+outbound:
+  voucher:
+    url: https://mynt-exam.mocklab.io/
+    apiKey: apikey
