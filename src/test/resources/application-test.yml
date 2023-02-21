@@ -1,4 +1,3 @@
-outbound:
-  voucher:
-    url: testUrl
+outbound.voucher:
+    url: https://test/
     apiKey: testKey

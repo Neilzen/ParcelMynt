@@ -1,5 +1,6 @@
 package com.mynt.parcel.parcelmynt.infrastructure.Configuration
 
+import com.mynt.parcel.parcelmynt.core.adapter.ParcelConditionAdapter
 import com.mynt.parcel.parcelmynt.infrastructure.voucher.VoucherClient
 import com.mynt.parcel.parcelmynt.infrastructure.voucher.VoucherGateway
 import org.springframework.context.annotation.Bean
@@ -12,9 +13,8 @@ class InfraTestConfiguration {
     def mock = new DetachedMockFactory()
 
     @Bean(name = "voucherAdapter")
-    VoucherGateway voucherGateway(VoucherClient voucherClient,
-                                  String apiKey) {
-        return new VoucherGateway(voucherClient, apiKey);
+    VoucherGateway voucherGateway() {
+        return new VoucherGateway(voucherClient(), apiKey());
     }
 
     @Bean
@@ -25,6 +25,11 @@ class InfraTestConfiguration {
     @Bean
     String apiKey() {
         return "testKey"
+    }
+
+    @Bean(name = "parcelConditionAdapter")
+    ParcelConditionAdapter parcelConditionAdapter() {
+        return mock.Mock(ParcelConditionAdapter)
     }
 
 }

@@ -2,14 +2,19 @@ package com.mynt.parcel.parcelmynt.api
 
 import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO
 import com.mynt.parcel.parcelmynt.api.response.ParcelResponse
+import com.mynt.parcel.parcelmynt.core.adapter.ParcelConditionAdapter
+import com.mynt.parcel.parcelmynt.core.entity.ParcelConditionEntity
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
+import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Import
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpStatus
 import org.springframework.test.context.ActiveProfiles
+import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -29,6 +34,9 @@ class DeliveryApiTest extends Specification {
     @Autowired
     TestRestTemplate restTemplate
 
+    @Autowired
+    ParcelConditionAdapter parcelConditionAdapter;
+
     void 'Parcel Post - where all request are valid'() {
         given:
         def requestBody = new ParcelDTO(weight: new BigDecimal("25"),
@@ -38,6 +46,8 @@ class DeliveryApiTest extends Specification {
                 voucherCode: "VOUCHER_111")
 
         def request = new HttpEntity(requestBody)
+
+        mockGetAllActiveParcelConditionOrderedByPriority()
 
         when:
         def response = restTemplate.postForEntity(urlParcel,
@@ -93,6 +103,62 @@ class DeliveryApiTest extends Specification {
         'Width is invalid'    | new BigDecimal("25")                    | new BigDecimal('10.5')                  | new BigDecimal('14.35')                 | new BigDecimal('-1')                    | null        | ["Width invalid value"]
         'Voucher invalid'     | new BigDecimal("25")                    | new BigDecimal('10.5')                  | new BigDecimal('14.35')                 | new BigDecimal(8.00)                    | "abc_12>>"  | ["Voucher code format is invalid."]
         'More than one issue' | new BigDecimal("25.1234")               | new BigDecimal('1234567890123456.5')    | new BigDecimal('-1')                    | null                                    | "abc_12>>"  | ["Weight invalid value", "Height invalid value", "Length invalid value", "Width cannot be empty", "Voucher code format is invalid."]
+    }
+
+    private mockGetAllActiveParcelConditionOrderedByPriority() {
+        parcelConditionAdapter.getAllActiveParcelConditionOrderedByPriority() >>
+                [
+                        new ParcelConditionEntity(
+                                0,
+                                0,
+                                'Reject',
+                                'weight > limit',
+                                new BigDecimal(50),
+                                BigDecimal.ZERO,
+                                '',
+                                true,
+                                true),
+                        new ParcelConditionEntity(
+                                0,
+                                1,
+                                'Heavy Parcel',
+                                'weight > limit',
+                                new BigDecimal(10),
+                                new BigDecimal('20'),
+                                'cost * weight',
+                                false,
+                                true),
+                        new ParcelConditionEntity(
+                                2,
+                                3,
+                                'Small Parcel',
+                                'volume < limit',
+                                new BigDecimal(1500),
+                                new BigDecimal('0.03'),
+                                'cost * volume',
+                                false,
+                                true),
+                        new ParcelConditionEntity(
+                                3,
+                                4,
+                                'Medium Parcel',
+                                'volume < limit',
+                                new BigDecimal(2500),
+                                new BigDecimal('0.04'),
+                                'cost * volume',
+                                false,
+                                true),
+                        new ParcelConditionEntity(
+                                4,
+                                5,
+                                'Large Parcel',
+                                '',
+                                null,
+                                new BigDecimal('0.05'),
+                                'cost * volume',
+                                false,
+                                true)
+                ]
     }
 
 
