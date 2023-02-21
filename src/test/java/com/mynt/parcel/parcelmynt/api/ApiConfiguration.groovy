@@ -1,6 +1,6 @@
 package com.mynt.parcel.parcelmynt.api
 
-import com.mynt.parcel.parcelmynt.adapter.VoucherAdapter
+import com.mynt.parcel.parcelmynt.core.adapter.VoucherAdapter
 import com.mynt.parcel.parcelmynt.core.service.ParcelService
 import com.mynt.parcel.parcelmynt.core.service.impl.ParcelServiceImpl
 import org.springframework.context.annotation.Bean

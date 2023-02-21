@@ -1,6 +1,5 @@
 package com.mynt.parcel.parcelmynt.core.entity;
 
-import com.mynt.parcel.parcelmynt.core.enumeration.ConditionOperator;
 import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Data;

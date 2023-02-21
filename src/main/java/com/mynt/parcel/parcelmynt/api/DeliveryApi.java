@@ -2,6 +2,7 @@ package com.mynt.parcel.parcelmynt.api;
 
 import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO;
 import com.mynt.parcel.parcelmynt.api.response.ParcelResponse;
+import com.mynt.parcel.parcelmynt.api.response.VoucherErrorResponse;
 import com.mynt.parcel.parcelmynt.api.response.VoucherResponse;
 import com.mynt.parcel.parcelmynt.core.service.ParcelService;
 import com.mynt.parcel.parcelmynt.core.service.impl.ParcelServiceImpl;
@@ -30,7 +31,8 @@ public class DeliveryApi {
                 new VoucherResponse(
                         BigDecimal.valueOf(3.00),
                         "testVoucher",
-                        false
+                        false,
+                        new VoucherErrorResponse()
                 )
         );
 

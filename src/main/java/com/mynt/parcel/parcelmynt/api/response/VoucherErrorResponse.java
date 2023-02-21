@@ -1,6 +1,5 @@
 package com.mynt.parcel.parcelmynt.api.response;
 
-import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class VoucherResponse {
+public class VoucherErrorResponse {
 
-    private BigDecimal discount;
-    private String voucherCode;
-    private boolean isExpired;
-    private VoucherErrorResponse voucherErrorResponse;
+    private String status;
+    private String errorMessage;
 
 }
