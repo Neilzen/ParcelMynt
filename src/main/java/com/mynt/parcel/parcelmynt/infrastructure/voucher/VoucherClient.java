@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(
-        value = "voucherClient",
+        value = "voucher-client",
         url = "${outbound.voucher.url}",
         configuration = VoucherClientConfiguration.class
 )

@@ -21,21 +21,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/delivery")
 public class DeliveryApi {
 
+    private final ParcelService parcelService;
+
+    @Autowired
+    public DeliveryApi(ParcelService parcelService) {
+        this.parcelService = parcelService;
+    }
+
     @PostMapping("/parcel")
     public ResponseEntity<ParcelResponse> computeParcelCost(@RequestBody @Valid ParcelDTO parcelDTO) {
         log.info("Start - Compute Parcel Cost");
-        ParcelResponse parcelResponse = new ParcelResponse(
-                BigDecimal.valueOf(103.00),
-                BigDecimal.valueOf(100.00),
-                false,
-                new VoucherResponse(
-                        BigDecimal.valueOf(3.00),
-                        "testVoucher",
-                        false,
-                        new VoucherErrorResponse()
-                )
-        );
-
+        ParcelResponse parcelResponse = parcelService.calculateCost(parcelDTO);
         log.info("End - Compute Parcel Cost");
         return ResponseEntity.ok(parcelResponse);
     }
