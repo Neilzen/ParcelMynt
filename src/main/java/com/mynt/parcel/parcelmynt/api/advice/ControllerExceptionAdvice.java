@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt.api.advice;
+package com.mynt.parcel.parcelmynt.api.advice;
 
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
@@ -12,19 +12,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
 @Slf4j
 public class ControllerExceptionAdvice extends ResponseEntityExceptionHandler {
-
-//    @ExceptionHandler(value = { UserAlreadyExistAuthenticationException.class })
-//    public ResponseEntity handleInvalidInputException(UserAlreadyExistAuthenticationException ex) {
-//        log.error("UserAlreadyExistAuthenticationException: ",ex.getMessage());
-//        return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-//    }
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(

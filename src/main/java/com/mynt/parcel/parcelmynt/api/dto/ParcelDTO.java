@@ -1,4 +1,4 @@
-package com.mynt.parcel.ParcelMynt.api.dto;
+package com.mynt.parcel.parcelmynt.api.dto;
 
 import java.math.BigDecimal;
 import javax.validation.constraints.DecimalMin;

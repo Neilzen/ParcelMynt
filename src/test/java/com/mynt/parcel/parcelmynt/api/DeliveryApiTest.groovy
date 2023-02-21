@@ -1,7 +1,7 @@
-package com.mynt.parcel.ParcelMynt.api
+package com.mynt.parcel.parcelmynt.api
 
-import com.mynt.parcel.ParcelMynt.api.dto.ParcelDTO
-import com.mynt.parcel.ParcelMynt.api.response.ParcelResponse
+import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO
+import com.mynt.parcel.parcelmynt.api.response.ParcelResponse
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.client.AutoConfigureWebClient
@@ -9,13 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ActiveProfiles
-import org.springframework.test.context.TestPropertySource
 import spock.lang.Specification
 import spock.lang.Unroll
 
-import java.util.stream.Collector
 import java.util.stream.Collectors
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT
@@ -32,7 +29,6 @@ class DeliveryApiTest extends Specification {
     @Autowired
     TestRestTemplate restTemplate
 
-    @Test
     void 'Parcel Post - where all request are valid'() {
         given:
         def requestBody = new ParcelDTO(weight: new BigDecimal("25"),
@@ -52,7 +48,7 @@ class DeliveryApiTest extends Specification {
         HttpStatus.OK == response.statusCode
     }
 
-    @Test
+
     @Unroll
     void 'Parcel Post - where #scope'() {
         given:

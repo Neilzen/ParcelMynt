@@ -15,13 +15,13 @@ The API should accept the following:
 
 The rules for calculating cost of delivery are in order of priority
 
-| Priority  | Rule Name     | Condition                  | Cost                 |  
-|-----------|---------------|----------------------------|----------------------|
-| (Highest) | Reject        | Weight exceeds 50kg        | N/A                  |
-|           | Heavy Parcel  | Weight exceeds 10kg        | PHP 20 * Weight (Kg) |
-|           | Small Parcel  | Volume is less than 1500 ㎥ | PHP 0.03 * Volume    |
-|           | Medium Parcel | Volume is less than 2500 ㎥ | PHP 0.04 * Volume    |
-|           | Large Parcel  |                            | PHP 0.05 * Volume    |
+| Priority  | Rule Name     | Condition                   | Cost                 |  
+|-----------|---------------|-----------------------------|----------------------|
+| (Highest) | Reject        | Weight exceeds 50kg         | N/A                  |
+|           | Heavy Parcel  | Weight exceeds 10kg         | PHP 20 * Weight (Kg) |
+|           | Small Parcel  | Volume is less than 1500 c㎥ | PHP 0.03 * Volume    |
+|           | Medium Parcel | Volume is less than 2500 c㎥ | PHP 0.04 * Volume    |
+|           | Large Parcel  |                             | PHP 0.05 * Volume    |
 
 As the market tends to fluctuate in terms of pricing, the rules needs to be as flexible as possible.
 
