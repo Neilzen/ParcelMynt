@@ -1,10 +1,10 @@
 package com.mynt.parcel.parcelmynt.core.service.impl
 
+import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO
 import com.mynt.parcel.parcelmynt.api.response.VoucherErrorResponse
 import com.mynt.parcel.parcelmynt.api.response.VoucherResponse
 import com.mynt.parcel.parcelmynt.core.adapter.ParcelConditionAdapter
 import com.mynt.parcel.parcelmynt.core.adapter.VoucherAdapter
-import com.mynt.parcel.parcelmynt.api.dto.ParcelDTO
 import com.mynt.parcel.parcelmynt.core.configuration.CoreTestConfiguration
 import com.mynt.parcel.parcelmynt.core.entity.ParcelConditionEntity
 import com.mynt.parcel.parcelmynt.core.enumeration.VoucherStatus
@@ -14,7 +14,6 @@ import com.mynt.parcel.parcelmynt.core.service.ParcelService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.util.ObjectUtils
-import org.springframework.util.StringUtils
 import spock.lang.Specification
 import spock.lang.Unroll
 

@@ -1,11 +1,9 @@
 package com.mynt.parcel.parcelmynt.infrastructure.voucher
 
-import com.mynt.parcel.parcelmynt.core.adapter.VoucherAdapter
-import com.mynt.parcel.parcelmynt.core.configuration.CoreTestConfiguration
+
 import com.mynt.parcel.parcelmynt.infrastructure.Configuration.InfraTestConfiguration
 import com.mynt.parcel.parcelmynt.infrastructure.voucher.Response.VoucherClientResponse
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.annotation.Bean
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
 
